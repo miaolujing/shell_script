@@ -1,0 +1,63 @@
+#!/usr/bin/expect -f
+set TIMEOUT -1
+set SERVER_IP [lindex $argv 0]
+set SERVER_PORT [lindex $argv 1]
+set ROOT_PASS [lindex $argv 2]
+set BASE_HOME "/usr/local/miner/miner-1.0.2-bin/conf"
+set PASSWD "llysc,1s1kr"
+
+stty -echo
+
+spawn ssh -p $SERVER_PORT $SERVER_IP 
+
+if {$argc != 3} {
+send_user "usage: 'SERVER_IP' 'SERVER_PORT' 'ROOT_PASS'\n"
+exit
+}
+
+expect {
+
+     "yes/no"
+                {
+                        send "yes\n";
+                                exp_continue
+                }
+
+     "password:"
+                {
+                         send "$ROOT_PASS\n";
+                }
+        }
+
+expect "Permission denied, please try again" {exit 1}
+expect "Host key verification failed." {exit 1}
+
+expect "\]#"
+send "cd $BASE_HOME\n"
+send "wget ftp://miaolj:miaolj@10.1.4.12/COLLECT/*\n"
+
+expect "\]#"
+send "chmod +x COLLECT_conf.sh\n"
+send "./PCOLLECTOR-001R.sh\n"
+expect "No such file or directory" {exit 4}
+
+expect "\]#"
+send "chmod +x COLLECT_conf.sh\n"
+send "./PCOLLECTOR-001.sh\n"
+expect "No such file or directory" {exit 4}
+
+expect "\]#"
+send "chmod +x COLLECT_conf.sh\n"
+send "./VCOLLECTOR-001R.sh\n"
+expect "No such file or directory" {exit 4}
+
+expect "\]#"
+send "chmod +x COLLECT_conf.sh\n"
+send "./VCOLLECTOR-001.sh\n"
+expect "No such file or directory" {exit 4}
+
+expect "\]#"
+send "exit\n"
+
+expect eof
+exit

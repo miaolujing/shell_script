@@ -1,0 +1,135 @@
+#!/usr/bin/expect -f
+set TIMEOUT -1
+set SERVER_IP [lindex $argv 0]
+set SERVER_PORT [lindex $argv 1]
+set ROOT_PASS [lindex $argv 2]
+set MINER_HOME "/opt"
+set MINER_BIN "/data"
+set BASE_HOME "/usr/local/miner/miner-1.0.2-bin/conf"
+set PASSWD "0wlonewave"
+
+stty -echo
+
+spawn ssh -p $SERVER_PORT $SERVER_IP 
+
+if {$argc != 3} {
+send_user "usage: 'SERVER_IP' 'SERVER_PORT' 'ROOT_PASS'\n"
+exit
+}
+
+expect {
+
+     "yes/no"
+                {
+                        send "yes\n";
+                                exp_continue
+                }
+
+     "password:"
+                {
+                         send "$ROOT_PASS\n";
+                }
+        }
+
+expect "Permission denied, please try again" {exit 1}
+expect "Host key verification failed." {exit 1}
+
+expect "\]#"
+send "scp -P 5188 10.254.240.111:/opt/flume_install/soft/L1/soft.tar.gz $MINER_HOME\n"
+expect {
+
+     "yes/no"
+                {
+                        send "yes\n";
+                                exp_continue
+                }
+
+     "password:"
+                {
+                         send "$PASSWD\n";
+                }
+        }
+
+expect "\]#"
+send "cd $MINER_HOME\n"
+send "tar -xzvf soft.tar.gz\n"
+expect "No such file or directory" {exit 2}
+
+expect "\]#"
+send "scp -P 5188 10.254.240.111:/opt/flume_install/soft/L1/miner-1.0.2.3.tar.gz $MINER_BIN\n"
+expect {
+
+     "yes/no"
+                {
+                        send "yes\n";
+                                exp_continue
+                }
+
+     "password:"
+                {
+                         send "$PASSWD\n";
+                }
+        }
+
+expect "\]#"
+send "cd $MINER_BIN\n"
+send "tar -xzvf miner-1.0.2.3.tar.gz\n"
+
+expect "\]#"
+send "cd miner-1.0.2.3\n"
+send "./agent-install.sh\n"
+expect "No such file or directory" {exit 3}
+
+expect "\]#"
+send "cd $BASE_HOME\n"
+send "scp -P 5188 10.254.240.111:/opt/flume_install/conf/L1 .\n"
+expect {
+
+     "yes/no"
+                {
+                        send "yes\n";
+                                exp_continue
+                }
+
+     "password:"
+                {
+                         send "$PASSWD\n";
+                }
+        }
+
+expect "\]#"
+send "chmod +x PIC01_conf.sh\n"
+send "./PIC01_conf.sh\n"
+expect "No such file or directory" {exit 4}
+
+expect "\]#"
+send "chmod +x PIC02_conf.sh\n"
+send "./PIC02_conf.sh\n"
+expect "No such file or directory" {exit 4}
+
+expect "\]#"
+send "chmod +x VID01_conf.sh\n"
+send "./VID01_conf.sh\n"
+expect "No such file or directory" {exit 4}
+
+expect "\]#"
+send "chmod +x VID02_conf.sh\n"
+send "./VID02_conf.sh\n"
+expect "No such file or directory" {exit 4}
+
+expect "\]#"
+send "chmod +x proxy_conf.sh\n"
+send "./proxy_conf.sh\n"
+expect "No such file or directory" {exit 4}
+
+expect "\]#"
+send "chmod +x source.sh\n"
+send "./source.sh\n"
+expect "No such file or directory" {exit 5}
+
+expect "\]#"
+send "source ~/.bash_profile\n"
+send "cd $MINER_HOME/soft/miner-test\n"
+
+expect eof
+exit

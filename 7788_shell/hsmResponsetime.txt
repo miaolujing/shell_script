@@ -1,0 +1,38 @@
+#!/bin/bash
+BASE_HOME=/tmp/miaolujing
+if [ $# -lt 3 ]
+then
+        echo "Usage: $0 <date> <dir> <part1> [part2]"
+        echo "example: $0 20140215 80 001 002"
+        exit
+fi
+
+rm -rf $BASE_HOME/*
+
+for i in 1 2 3 4 5 6 7 8
+do
+        echo $i
+        cp /mnt/disk$i/flume/test/huatong/picture/$1/$2/$3/*.txt /tmp/miaolujing/
+        if [ $# -eq 4 ]; then
+                cp /mnt/disk$i/flume/test/huatong/picture/$1/$2/$4/*.txt /tmp/miaolujing/
+        fi
+done
+
+cat $BASE_HOME/*.txt >> $BASE_HOME/one
+
+awk -F"|" '{print $3,$2,$13,$7}' $BASE_HOME/one > $BASE_HOME/two
+
+awk '{$1 = strftime("%Y-%m-%d+%H:%M",$1);print $1"|"$2"|"$3,$4}' $BASE_HOME/two > $BASE_HOME/three
+
+awk '{ if($2 < 1) {count[$1]++; value[$1]+=$2}} END{for(name in count) printf("%s %.3f\n", name,value[name]/count[name])}' $BASE_HOME/three | sort > $BASE_HOME/result.txt
+
+
+
+
+#awk '{count[$1]++} END{for(name in count) print name,count[name]}' $BASE_HOME/four |sort > $BASE_HOME/five
+
+
+
+
+#ss=`awk '{print $2}' $BASE_HOME/four`
+"hsmResponsetime.sh" 61L, 1471C

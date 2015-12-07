@@ -1,0 +1,530 @@
+spawn ssh -p 5188 10.1.4.38
+The authenticity of host '[10.1.4.38]:5188 ([10.1.4.38]:5188)' can't be established.
+RSA key fingerprint is 62:91:11:74:f9:bc:d2:72:14:1e:16:3a:09:30:f4:87.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[10.1.4.38]:5188' (RSA) to the list of known hosts.
+root@10.1.4.38's password: 
+Last login: Fri Mar 14 01:53:17 2014 from 10.1.4.12
+[root@HTCDN-ZJHZ-NOC-LOGUP-01 ~]# cd /usr/local/miner/miner-1.0.2-bin/conf
+[root@HTCDN-ZJHZ-NOC-LOGUP-01 conf]# wget ftp://miaolj:miaolj@10.1.4.12/COLLECT/*
+chmod +x COLLECT_conf.sh
+./COLLECT_conf.sh
+--2014-03-14 02:24:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/*
+           => “.listing”
+正在连接 10.1.4.12:21... 已连接。
+正在以 miaolj 登录 ... 登录成功！
+==> SYST ... 完成。    ==> PWD ... 完成。
+==> TYPE I ... 完成。  ==> CWD (1) /opt/temp/conf/COLLECT ... 完成。
+==> PASV ... 完成。    ==> LIST ... 完成。
+
+    [<=>                                                                                                                            ] 0           --.-K/s                  [ <=>                                                                                                                           ] 577         --.-K/s   in 0s      
+
+2014-03-14 02:24:26 (42.7 MB/s) - “.listing” 已保存 [577]
+
+已删除 “.listing”。
+--2014-03-14 02:24:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_PORT.INFO
+           => “COLLECT_PORT.INFO”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_PORT.INFO ... 完成。
+长度：14299 (14K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 14,299      --.-K/s   in 0s      
+
+2014-03-14 02:24:26 (153 MB/s) - “COLLECT_PORT.INFO” 已保存 [14299]
+
+--2014-03-14 02:24:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_conf.sh
+           => “COLLECT_conf.sh”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_conf.sh ... 完成。
+长度：5336 (5.2K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 5,336       --.-K/s   in 0s      
+
+2014-03-14 02:24:26 (465 MB/s) - “COLLECT_conf.sh” 已保存 [5336]
+
+--2014-03-14 02:24:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001.conf
+           => “PCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001.conf ... 完成。
+长度：16064 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,064      --.-K/s   in 0s      
+
+2014-03-14 02:24:26 (213 MB/s) - “PCOLLECTOR-001.conf” 已保存 [16064]
+
+--2014-03-14 02:24:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001R.conf
+           => “PCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001R.conf ... 完成。
+长度：16066 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,066      --.-K/s   in 0s      
+
+2014-03-14 02:24:26 (205 MB/s) - “PCOLLECTOR-001R.conf” 已保存 [16066]
+
+--2014-03-14 02:24:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001.conf
+           => “VCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001.conf ... 完成。
+长度：16054 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,054      --.-K/s   in 0s      
+
+2014-03-14 02:24:26 (69.7 MB/s) - “VCOLLECTOR-001.conf” 已保存 [16054]
+
+--2014-03-14 02:24:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001R.conf
+           => “VCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001R.conf ... 完成。
+长度：16056 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,056      --.-K/s   in 0s      
+
+2014-03-14 02:24:26 (218 MB/s) - “VCOLLECTOR-001R.conf” 已保存 [16056]
+
+[root@HTCDN-ZJHZ-NOC-LOGUP-01 conf]# chmod +x COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-01 conf]# ./COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-01 conf]# exit
+logout
+Connection to 10.1.4.38 closed.
+spawn ssh -p 5188 10.1.4.39
+The authenticity of host '[10.1.4.39]:5188 ([10.1.4.39]:5188)' can't be established.
+RSA key fingerprint is 94:ba:9a:c3:5e:c2:0a:fd:b7:b0:06:a2:08:3d:da:96.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[10.1.4.39]:5188' (RSA) to the list of known hosts.
+root@10.1.4.39's password: 
+Last login: Thu Mar 13 22:04:29 2014 from 10.1.4.12
+[root@HTCDN-ZJHZ-NOC-LOGUP-02 ~]# cd /usr/local/miner/miner-1.0.2-bin/conf
+[root@HTCDN-ZJHZ-NOC-LOGUP-02 conf]# wget ftp://miaolj:miaolj@10.1.4.12/COLLECT/*
+--2014-03-14 02:24:55--  ftp://miaolj:*password*@10.1.4.12/COLLECT/*
+           => “.listing”
+正在连接 10.1.4.12:21... 已连接。
+正在以 miaolj 登录 ... 登录成功！
+==> SYST ... 完成。    ==> PWD ... 完成。
+==> TYPE I ... 完成。  ==> CWD (1) /opt/temp/conf/COLLECT ... 完成。
+==> PASV ... 完成。    ==> LIST ... 完成。
+
+    [<=>                                                                                                                            ] 0           --.-K/s                  [ <=>                                                                                                                           ] 577         --.-K/s   in 0s      
+
+2014-03-14 02:24:56 (50.9 MB/s) - “.listing” 已保存 [577]
+
+已删除 “.listing”。
+--2014-03-14 02:24:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_PORT.INFO
+           => “COLLECT_PORT.INFO”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_PORT.INFO ... 完成。
+长度：14299 (14K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 14,299      --.-K/s   in 0s      
+
+2014-03-14 02:24:56 (346 MB/s) - “COLLECT_PORT.INFO” 已保存 [14299]
+
+--2014-03-14 02:24:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_conf.sh
+           => “COLLECT_conf.sh”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_conf.sh ... 完成。
+长度：5336 (5.2K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 5,336       --.-K/s   in 0s      
+
+2014-03-14 02:24:56 (387 MB/s) - “COLLECT_conf.sh” 已保存 [5336]
+
+--2014-03-14 02:24:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001.conf
+           => “PCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001.conf ... 完成。
+长度：16064 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,064      --.-K/s   in 0s      
+
+2014-03-14 02:24:56 (556 MB/s) - “PCOLLECTOR-001.conf” 已保存 [16064]
+
+--2014-03-14 02:24:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001R.conf
+           => “PCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001R.conf ... 完成。
+长度：16066 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,066      --.-K/s   in 0s      
+
+2014-03-14 02:24:56 (149 MB/s) - “PCOLLECTOR-001R.conf” 已保存 [16066]
+
+--2014-03-14 02:24:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001.conf
+           => “VCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001.conf ... 完成。
+长度：16054 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,054      --.-K/s   in 0s      
+
+2014-03-14 02:24:56 (691 MB/s) - “VCOLLECTOR-001.conf” 已保存 [16054]
+
+--2014-03-14 02:24:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001R.conf
+           => “VCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001R.conf ... 完成。
+长度：16056 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,056      --.-K/s   in 0s      
+
+2014-03-14 02:24:56 (568 MB/s) - “VCOLLECTOR-001R.conf” 已保存 [16056]
+
+[root@HTCDN-ZJHZ-NOC-LOGUP-02 conf]# chmod +x COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-02 conf]# ./COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-02 conf]# exit
+logout
+Connection to 10.1.4.39 closed.
+spawn ssh -p 5188 10.1.4.40
+The authenticity of host '[10.1.4.40]:5188 ([10.1.4.40]:5188)' can't be established.
+RSA key fingerprint is 83:48:6a:11:b2:5e:b9:e9:96:8a:4b:99:01:ea:a9:2d.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[10.1.4.40]:5188' (RSA) to the list of known hosts.
+root@10.1.4.40's password: 
+Last login: Thu Mar 13 22:08:47 2014 from 10.1.4.12
+[root@HTCDN-ZJHZ-NOC-LOGUP-03 ~]# cd /usr/local/miner/miner-1.0.2-bin/conf
+[root@HTCDN-ZJHZ-NOC-LOGUP-03 conf]# wget ftp://miaolj:miaolj@10.1.4.12/COLLECT/*
+chmod +x COLLECT_conf.sh
+./COLLECT_conf.sh
+--2014-03-14 02:25:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/*
+           => “.listing”
+正在连接 10.1.4.12:21... 已连接。
+正在以 miaolj 登录 ... 登录成功！
+==> SYST ... 完成。    ==> PWD ... 完成。
+==> TYPE I ... 完成。  ==> CWD (1) /opt/temp/conf/COLLECT ... 完成。
+==> PASV ... 完成。    ==> LIST ... 完成。
+
+    [<=>                                                                                                                            ] 0           --.-K/s                  [ <=>                                                                                                                           ] 577         --.-K/s   in 0s      
+
+2014-03-14 02:25:26 (49.3 MB/s) - “.listing” 已保存 [577]
+
+已删除 “.listing”。
+--2014-03-14 02:25:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_PORT.INFO
+           => “COLLECT_PORT.INFO”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_PORT.INFO ... 完成。
+长度：14299 (14K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 14,299      --.-K/s   in 0s      
+
+2014-03-14 02:25:26 (236 MB/s) - “COLLECT_PORT.INFO” 已保存 [14299]
+
+--2014-03-14 02:25:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_conf.sh
+           => “COLLECT_conf.sh”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_conf.sh ... 完成。
+长度：5336 (5.2K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 5,336       --.-K/s   in 0s      
+
+2014-03-14 02:25:27 (313 MB/s) - “COLLECT_conf.sh” 已保存 [5336]
+
+--2014-03-14 02:25:27--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001.conf
+           => “PCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001.conf ... 完成。
+长度：16064 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,064      --.-K/s   in 0s      
+
+2014-03-14 02:25:27 (644 MB/s) - “PCOLLECTOR-001.conf” 已保存 [16064]
+
+--2014-03-14 02:25:27--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001R.conf
+           => “PCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001R.conf ... 完成。
+长度：16066 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,066      --.-K/s   in 0s      
+
+2014-03-14 02:25:27 (177 MB/s) - “PCOLLECTOR-001R.conf” 已保存 [16066]
+
+--2014-03-14 02:25:27--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001.conf
+           => “VCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001.conf ... 完成。
+长度：16054 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,054      --.-K/s   in 0s      
+
+2014-03-14 02:25:27 (130 MB/s) - “VCOLLECTOR-001.conf” 已保存 [16054]
+
+--2014-03-14 02:25:27--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001R.conf
+           => “VCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001R.conf ... 完成。
+长度：16056 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,056      --.-K/s   in 0s      
+
+2014-03-14 02:25:27 (77.8 MB/s) - “VCOLLECTOR-001R.conf” 已保存 [16056]
+
+[root@HTCDN-ZJHZ-NOC-LOGUP-03 conf]# chmod +x COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-03 conf]# ./COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-03 conf]# exit
+logout
+Connection to 10.1.4.40 closed.
+spawn ssh -p 5188 10.1.4.41
+The authenticity of host '[10.1.4.41]:5188 ([10.1.4.41]:5188)' can't be established.
+RSA key fingerprint is 36:ae:ec:b0:7f:49:07:5a:55:6f:28:c0:f5:f3:0d:a1.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[10.1.4.41]:5188' (RSA) to the list of known hosts.
+root@10.1.4.41's password: 
+Last login: Thu Mar 13 22:09:53 2014 from 10.1.4.12
+[root@HTCDN-ZJHZ-NOC-LOGUP-04 ~]# cd /usr/local/miner/miner-1.0.2-bin/conf
+[root@HTCDN-ZJHZ-NOC-LOGUP-04 conf]# wget ftp://miaolj:miaolj@10.1.4.12/COLLECT/*
+--2014-03-14 02:25:57--  ftp://miaolj:*password*@10.1.4.12/COLLECT/*
+           => “.listing”
+正在连接 10.1.4.12:21... 已连接。
+正在以 miaolj 登录 ... 登录成功！
+==> SYST ... 完成。    ==> PWD ... 完成。
+==> TYPE I ... 完成。  ==> CWD (1) /opt/temp/conf/COLLECT ... 完成。
+==> PASV ... 完成。    ==> LIST ... 完成。
+
+    [<=>                                                                                                                            ] 0           --.-K/s                  [ <=>                                                                                                                           ] 577         --.-K/s   in 0s      
+
+2014-03-14 02:25:57 (34.3 MB/s) - “.listing” 已保存 [577]
+
+已删除 “.listing”。
+--2014-03-14 02:25:57--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_PORT.INFO
+           => “COLLECT_PORT.INFO”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_PORT.INFO ... 完成。
+长度：14299 (14K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 14,299      --.-K/s   in 0s      
+
+2014-03-14 02:25:57 (444 MB/s) - “COLLECT_PORT.INFO” 已保存 [14299]
+
+--2014-03-14 02:25:57--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_conf.sh
+           => “COLLECT_conf.sh”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_conf.sh ... 完成。
+长度：5336 (5.2K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 5,336       --.-K/s   in 0s      
+
+2014-03-14 02:25:57 (426 MB/s) - “COLLECT_conf.sh” 已保存 [5336]
+
+--2014-03-14 02:25:57--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001.conf
+           => “PCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001.conf ... 完成。
+长度：16064 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,064      --.-K/s   in 0s      
+
+2014-03-14 02:25:57 (588 MB/s) - “PCOLLECTOR-001.conf” 已保存 [16064]
+
+--2014-03-14 02:25:57--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001R.conf
+           => “PCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001R.conf ... 完成。
+长度：16066 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,066      --.-K/s   in 0s      
+
+2014-03-14 02:25:57 (143 MB/s) - “PCOLLECTOR-001R.conf” 已保存 [16066]
+
+--2014-03-14 02:25:57--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001.conf
+           => “VCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001.conf ... 完成。
+长度：16054 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,054      --.-K/s   in 0s      
+
+2014-03-14 02:25:57 (573 MB/s) - “VCOLLECTOR-001.conf” 已保存 [16054]
+
+--2014-03-14 02:25:57--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001R.conf
+           => “VCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001R.conf ... 完成。
+长度：16056 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,056      --.-K/s   in 0s      
+
+2014-03-14 02:25:57 (76.2 MB/s) - “VCOLLECTOR-001R.conf” 已保存 [16056]
+
+[root@HTCDN-ZJHZ-NOC-LOGUP-04 conf]# chmod +x COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-04 conf]# ./COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-04 conf]# exit
+logout
+Connection to 10.1.4.41 closed.
+spawn ssh -p 5188 10.1.4.42
+The authenticity of host '[10.1.4.42]:5188 ([10.1.4.42]:5188)' can't be established.
+RSA key fingerprint is 92:64:e6:b0:39:5d:ed:8f:ee:7d:50:64:91:d4:28:73.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[10.1.4.42]:5188' (RSA) to the list of known hosts.
+root@10.1.4.42's password: 
+Last login: Thu Mar 13 22:11:16 2014 from 10.1.4.12
+[root@HTCDN-ZJHZ-NOC-LOGUP-05 ~]# cd /usr/local/miner/miner-1.0.2-bin/conf
+[root@HTCDN-ZJHZ-NOC-LOGUP-05 conf]# wget ftp://miaolj:miaolj@10.1.4.12/COLLECT/*
+chmod +x COLLECT_conf.sh
+./COLLECT_conf.sh
+--2014-03-14 02:26:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/*
+           => “.listing”
+正在连接 10.1.4.12:21... 已连接。
+正在以 miaolj 登录 ... 登录成功！
+==> SYST ... 完成。    ==> PWD ... 完成。
+==> TYPE I ... 完成。  ==> CWD (1) /opt/temp/conf/COLLECT ... 完成。
+==> PASV ... 完成。    ==> LIST ... 完成。
+
+    [<=>                                                                                                                            ] 0           --.-K/s                  [ <=>                                                                                                                           ] 577         --.-K/s   in 0s      
+
+2014-03-14 02:26:26 (54.8 MB/s) - “.listing” 已保存 [577]
+
+已删除 “.listing”。
+--2014-03-14 02:26:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_PORT.INFO
+           => “COLLECT_PORT.INFO”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_PORT.INFO ... 完成。
+长度：14299 (14K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 14,299      --.-K/s   in 0s      
+
+2014-03-14 02:26:26 (455 MB/s) - “COLLECT_PORT.INFO” 已保存 [14299]
+
+--2014-03-14 02:26:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_conf.sh
+           => “COLLECT_conf.sh”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_conf.sh ... 完成。
+长度：5336 (5.2K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 5,336       --.-K/s   in 0s      
+
+2014-03-14 02:26:26 (425 MB/s) - “COLLECT_conf.sh” 已保存 [5336]
+
+--2014-03-14 02:26:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001.conf
+           => “PCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001.conf ... 完成。
+长度：16064 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,064      --.-K/s   in 0s      
+
+2014-03-14 02:26:26 (102 MB/s) - “PCOLLECTOR-001.conf” 已保存 [16064]
+
+--2014-03-14 02:26:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001R.conf
+           => “PCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001R.conf ... 完成。
+长度：16066 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,066      --.-K/s   in 0s      
+
+2014-03-14 02:26:26 (191 MB/s) - “PCOLLECTOR-001R.conf” 已保存 [16066]
+
+--2014-03-14 02:26:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001.conf
+           => “VCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001.conf ... 完成。
+长度：16054 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,054      --.-K/s   in 0s      
+
+2014-03-14 02:26:26 (82.8 MB/s) - “VCOLLECTOR-001.conf” 已保存 [16054]
+
+--2014-03-14 02:26:26--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001R.conf
+           => “VCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001R.conf ... 完成。
+长度：16056 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,056      --.-K/s   in 0s      
+
+2014-03-14 02:26:26 (86.7 MB/s) - “VCOLLECTOR-001R.conf” 已保存 [16056]
+
+[root@HTCDN-ZJHZ-NOC-LOGUP-05 conf]# chmod +x COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-05 conf]# ./COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-05 conf]# exit
+logout
+Connection to 10.1.4.42 closed.
+spawn ssh -p 5188 10.1.4.43
+The authenticity of host '[10.1.4.43]:5188 ([10.1.4.43]:5188)' can't be established.
+RSA key fingerprint is 30:3a:95:39:fb:d4:7e:de:cd:f0:c9:cd:7a:97:91:76.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[10.1.4.43]:5188' (RSA) to the list of known hosts.
+root@10.1.4.43's password: 
+Last login: Thu Mar 13 22:12:16 2014 from 10.1.4.12
+[root@HTCDN-ZJHZ-NOC-LOGUP-06 ~]# cd /usr/local/miner/miner-1.0.2-bin/conf
+[root@HTCDN-ZJHZ-NOC-LOGUP-06 conf]# wget ftp://miaolj:miaolj@10.1.4.12/COLLECT/*
+chmod +x COLLECT_conf.sh
+./COLLECT_conf.sh
+--2014-03-14 02:26:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/*
+           => “.listing”
+正在连接 10.1.4.12:21... 已连接。
+正在以 miaolj 登录 ... 登录成功！
+==> SYST ... 完成。    ==> PWD ... 完成。
+==> TYPE I ... 完成。  ==> CWD (1) /opt/temp/conf/COLLECT ... 完成。
+==> PASV ... 完成。    ==> LIST ... 完成。
+
+    [<=>                                                                                                                            ] 0           --.-K/s                  [ <=>                                                                                                                           ] 577         --.-K/s   in 0s      
+
+2014-03-14 02:26:56 (51.6 MB/s) - “.listing” 已保存 [577]
+
+已删除 “.listing”。
+--2014-03-14 02:26:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_PORT.INFO
+           => “COLLECT_PORT.INFO”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_PORT.INFO ... 完成。
+长度：14299 (14K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 14,299      --.-K/s   in 0s      
+
+2014-03-14 02:26:56 (408 MB/s) - “COLLECT_PORT.INFO” 已保存 [14299]
+
+--2014-03-14 02:26:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/COLLECT_conf.sh
+           => “COLLECT_conf.sh”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR COLLECT_conf.sh ... 完成。
+长度：5336 (5.2K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 5,336       --.-K/s   in 0s      
+
+2014-03-14 02:26:56 (299 MB/s) - “COLLECT_conf.sh” 已保存 [5336]
+
+--2014-03-14 02:26:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001.conf
+           => “PCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001.conf ... 完成。
+长度：16064 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,064      --.-K/s   in 0s      
+
+2014-03-14 02:26:56 (212 MB/s) - “PCOLLECTOR-001.conf” 已保存 [16064]
+
+--2014-03-14 02:26:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/PCOLLECTOR-001R.conf
+           => “PCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR PCOLLECTOR-001R.conf ... 完成。
+长度：16066 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,066      --.-K/s   in 0s      
+
+2014-03-14 02:26:56 (200 MB/s) - “PCOLLECTOR-001R.conf” 已保存 [16066]
+
+--2014-03-14 02:26:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001.conf
+           => “VCOLLECTOR-001.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001.conf ... 完成。
+长度：16054 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,054      --.-K/s   in 0s      
+
+2014-03-14 02:26:56 (195 MB/s) - “VCOLLECTOR-001.conf” 已保存 [16054]
+
+--2014-03-14 02:26:56--  ftp://miaolj:*password*@10.1.4.12/COLLECT/VCOLLECTOR-001R.conf
+           => “VCOLLECTOR-001R.conf”
+==> 不需要 CWD。
+==> PASV ... 完成。    ==> RETR VCOLLECTOR-001R.conf ... 完成。
+长度：16056 (16K)
+
+ 0% [                                                                                                                               ] 0           --.-K/s              100%[==============================================================================================================================>] 16,056      --.-K/s   in 0s      
+
+2014-03-14 02:26:56 (237 MB/s) - “VCOLLECTOR-001R.conf” 已保存 [16056]
+
+[root@HTCDN-ZJHZ-NOC-LOGUP-06 conf]# chmod +x COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-06 conf]# ./COLLECT_conf.sh
+[root@HTCDN-ZJHZ-NOC-LOGUP-06 conf]# exit
+logout
+Connection to 10.1.4.43 closed.

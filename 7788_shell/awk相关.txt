@@ -1,0 +1,2 @@
+1、第一行相同，取固定某一行，然后再取最大值，注意，取值是从0行开始
+cat 1.txt|awk -F"," '{if(count[$1]++<=15) value[$1]=$2} END {for(i in count) print value[i]}'|awk 'BEGIN {max = 0} {if ($1>max) max=$1} END {print max}'
